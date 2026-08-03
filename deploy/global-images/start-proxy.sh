@@ -73,6 +73,29 @@ fi
 
 bool() { [[ "$1" == "1" ]] && echo "true" || echo "false"; }
 
+# ── 可选：按 agent 前缀路由到不同上游（per-agent upstream override）────────
+# 典型场景：/codebuddy/* 走本地 vLLM（Qwen），/cursor/* 走云端 OpenAI 兼容上游
+# （如 Synthetic https://api.synthetic.new/openai/v1），两路共用同一套记忆头。
+# 注意：proxy 只认这 5 个 agent 前缀做 spaceId 提取：claude-code/codebuddy/
+# cursor/hermes/openclaw。不能用 "openai"（会被当成无 spaceId 请求而鉴权失败）。
+# 留空 PROXY_CURSOR_UPSTREAM_URL → 只用全局 upstream.url，不生成 agents 块。
+PROXY_CURSOR_UPSTREAM_URL="${PROXY_CURSOR_UPSTREAM_URL:-}"
+PROXY_CURSOR_UPSTREAM_API_KEY="${PROXY_CURSOR_UPSTREAM_API_KEY:-}"
+# 未显式给 key 时，尝试从 pi 的 ~/.pi/agent/auth.json 读 synthetic.key（本机部署便利）
+if [[ -z "$PROXY_CURSOR_UPSTREAM_API_KEY" && -n "$PROXY_CURSOR_UPSTREAM_URL" ]]; then
+  PI_AUTH="${PI_AUTH_JSON:-$HOME/.pi/agent/auth.json}"
+  if [[ -f "$PI_AUTH" ]]; then
+    PROXY_CURSOR_UPSTREAM_API_KEY="$(node -e "try{const a=JSON.parse(require('fs').readFileSync('$PI_AUTH','utf8'));process.stdout.write(a.synthetic&&a.synthetic.key?a.synthetic.key:'')}catch(e){}" 2>/dev/null)"
+    [[ -n "$PROXY_CURSOR_UPSTREAM_API_KEY" ]] && info "从 $PI_AUTH 读到 synthetic.key（per-agent cursor 上游凭据）"
+  fi
+fi
+if [[ -n "$PROXY_CURSOR_UPSTREAM_URL" ]]; then
+  AGENTS_BLOCK=$(printf '  agents:\n    cursor:\n      url: %s\n      apiKey: %s' "$PROXY_CURSOR_UPSTREAM_URL" "$PROXY_CURSOR_UPSTREAM_API_KEY")
+  info "per-agent 上游：cursor → $PROXY_CURSOR_UPSTREAM_URL"
+else
+  AGENTS_BLOCK=""
+fi
+
 info "生成 proxy config → $CONFIG_FILE  (auth=$(bool $PROXY_ENABLE_AUTH) session-init=$(bool $PROXY_ENABLE_SESSION_INIT) tdai=$(bool $PROXY_ENABLE_TDAI))"
 cat > "$CONFIG_FILE" <<YAML
 # 由 start-proxy.sh 自动生成 —— 每次启动覆盖，请不要手动改。
@@ -84,6 +107,7 @@ server:
 upstream:
   url: "${PROXY_UPSTREAM_URL}"
   apiKey: "${PROXY_UPSTREAM_API_KEY}"
+${AGENTS_BLOCK}
 
 log:
   file: ""

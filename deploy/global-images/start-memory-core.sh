@@ -51,6 +51,23 @@ rm_container_if_exists "$CONTAINER"
 CORE_CONFIG_DIR="${MEMORY_CORE_CONFIG_DIR:-$SCRIPT_DIR/.memory-core-config}"
 mkdir -p "$CORE_CONFIG_DIR"
 CORE_CONFIG_FILE="$CORE_CONFIG_DIR/tdai-gateway.yaml"
+
+# ── Embedding 配置（可选）─────────────────────────────────────────
+# .env 里填 EMBEDDING_* 即可启用向量召回；留空则保持默认 provider: none。
+# 例（OpenAI）：
+#   EMBEDDING_PROVIDER=openai
+#   EMBEDDING_BASE_URL=https://api.openai.com/v1
+#   EMBEDDING_API_KEY=sk-...
+#   EMBEDDING_MODEL=text-embedding-3-small
+#   EMBEDDING_DIMENSIONS=1536
+EMBEDDING_PROVIDER="${EMBEDDING_PROVIDER:-none}"
+if [[ "$EMBEDDING_PROVIDER" == "none" || -z "${EMBEDDING_BASE_URL:-}" || -z "${EMBEDDING_API_KEY:-}" || -z "${EMBEDDING_MODEL:-}" || -z "${EMBEDDING_DIMENSIONS:-}" ]]; then
+  EMBED_BLOCK="    provider: none"
+  [[ "$EMBEDDING_PROVIDER" != "none" ]] && warn "EMBEDDING_PROVIDER=$EMBEDDING_PROVIDER 但 EMBEDDING_BASE_URL/API_KEY/MODEL/DIMENSIONS 未全部填写，embedding 仍为 none。"
+else
+  EMBED_BLOCK=$(printf '    provider: %s\n    baseUrl: %s\n    apiKey: %s\n    model: %s\n    dimensions: %s' \
+    "$EMBEDDING_PROVIDER" "$EMBEDDING_BASE_URL" "$EMBEDDING_API_KEY" "$EMBEDDING_MODEL" "$EMBEDDING_DIMENSIONS")
+fi
 info "生成 gateway config → $CORE_CONFIG_FILE"
 cat > "$CORE_CONFIG_FILE" <<YAML
 # 由 start-memory-core.sh 自动生成 —— 每次启动覆盖，请不要手动改。
@@ -99,7 +116,7 @@ memory:
     timeoutMs: 5000
   storeBackend: sqlite
   embedding:
-    provider: none
+${EMBED_BLOCK}
 
 # ── Skill 模块 ──
 skill:
