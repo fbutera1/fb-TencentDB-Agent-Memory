@@ -104,10 +104,11 @@ function toIdFields(state: import("../session/types.js").SessionInitState | unde
  */
 function loadSessionIdsL1(sessionKey: string): SessionIdFields | null {
   let state = getSessionStore().get(sessionKey);
-  // 与 skill-bridge 对齐：尝试 codebuddy: / claude-code: 前缀兜底
+  // 与 skill-bridge 对齐：尝试 codebuddy: / claude-code: / cursor: 前缀兜底
   if (!state && !sessionKey.includes(":")) {
     state = getSessionStore().get(`codebuddy:${sessionKey}`)
-        ?? getSessionStore().get(`claude-code:${sessionKey}`);
+        ?? getSessionStore().get(`claude-code:${sessionKey}`)
+        ?? getSessionStore().get(`cursor:${sessionKey}`);
   }
   return toIdFields(state);
 }
@@ -139,6 +140,8 @@ async function loadSessionIdsL2(
     agentSource = sessionKey.slice(0, colonIdx);
     sessionId = sessionKey.slice(colonIdx + 1);
   }
+  // cursor: prefix is a valid agentSource (Pi agent / Synthetic)
+  // — no special handling needed, just ensure it's tried as a candidate above
 
   // 拿 userId：先 verify（如果 auth 关了就没法走 L2 fallthrough）
   if (!isAuthEnabled() || !apiKey) return null;

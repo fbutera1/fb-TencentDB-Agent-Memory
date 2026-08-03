@@ -115,6 +115,9 @@ memory:
     strategy: hybrid
     timeoutMs: 5000
   storeBackend: sqlite
+  bm25:
+    enabled: true
+    language: "${BM25_LANGUAGE:-en}"
   embedding:
 ${EMBED_BLOCK}
 
@@ -139,12 +142,20 @@ skill:
 YAML
 
 info "启动 memory-core (image=$MEMORY_CORE_IMAGE, port=$MEMORY_CORE_PORT)"
+
+# ── Prompt patches（English-first 输出指令）────────────────────────
+# 将修改过的 prompt 文件挂载到容器内，覆盖镜像中的中文 prompt。
+PROMPT_PATCH_DIR="$SCRIPT_DIR/.prompt-patches/core/prompts"
+
 $DOCKER run -d --name "$CONTAINER" \
   --network "$NETWORK" \
   --network-alias memory-core \
   -p "${MEMORY_CORE_PORT}:8420" \
   -v "${MEMORY_CORE_VOLUME}:/data/tdai-memory" \
   -v "$CORE_CONFIG_FILE:/data/config/tdai-gateway.yaml:ro" \
+  -v "$PROMPT_PATCH_DIR/l1-extraction.ts:/app/src/core/prompts/l1-extraction.ts:ro" \
+  -v "$PROMPT_PATCH_DIR/scene-extraction.ts:/app/src/core/prompts/scene-extraction.ts:ro" \
+  -v "$PROMPT_PATCH_DIR/persona-generation.ts:/app/src/core/prompts/persona-generation.ts:ro" \
   -e TDAI_GATEWAY_PORT=8420 \
   -e TDAI_GATEWAY_HOST=0.0.0.0 \
   -e TDAI_GATEWAY_API_KEY="$MEMORY_CORE_GATEWAY_API_KEY" \
