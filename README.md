@@ -12,7 +12,6 @@
 [![Node](https://img.shields.io/badge/node-%3E=22.16-brightgreen)](https://nodejs.org/)
 [![OpenClaw](https://img.shields.io/badge/OpenClaw-%3E=2026.3.13-orange)](https://github.com/openclaw/openclaw)
 [![Hermes](https://img.shields.io/badge/Hermes-Gateway-7B61FF)](https://hermes-agent.nousresearch.com/docs/)
-[![Discord](https://img.shields.io/badge/Discord-Join-5865F2?logo=discord&logoColor=white)](https://discord.gg/dJQM6mKMF)
 
 [Installation](#installation) · [What is it?](#what-is-tencentdb-agent-memory) · [Team Play](#one-play-style-build-a-growing-agent-team-for-a-one-person-company) · [Technical Implementation](#technical-implementation) · [Benchmark](#benchmark)
 
@@ -21,6 +20,8 @@
 </div>
 
 ---
+
+> **Fork notice:** This is a personal fork of [TencentDB Agent Memory](https://github.com/Tencent/TencentDB-Agent-Memory), maintained for private development and kept in sync with upstream. It is **not a community project** — issues, pull requests, and contributions are not accepted here. For the original project, community, discussions, and contributions, please visit the [upstream repository](https://github.com/Tencent/TencentDB-Agent-Memory). All credit for the original work belongs to the TencentDB Agent Memory team.
 
 > **Latest:** Team Memory Beta is evolving quickly — install it and start exploring in minutes.
 
@@ -263,9 +264,7 @@ PersonaMem tests whether an Agent can correctly understand and apply user inform
 - [Full Installation Guide](./INSTALL.md) (Memory Core + Hub + Proxy one-click deployment)
 - [Data Migration Tool (v2 → v3)](./MemoryCore/scripts/migrate-v2-to-v3/README.md) (if you're on an older release and want to migrate existing data)
 - [Knowledge OpenAPI](./MemoryKnowledge/openapi.yaml)
-- [Contributing Guide](./CONTRIBUTING.md)
-
-Agent Memory doesn't have a settled standard yet. Bug reports, documentation, benchmarks, new framework adapters, and more creative Memory Hub use cases are all welcome.
+This fork tracks the upstream project; see the [upstream repository](https://github.com/Tencent/TencentDB-Agent-Memory) for contribution guidelines and roadmap discussion.
 
 ---
 ## Acknowledgements
@@ -279,14 +278,11 @@ TencentDB Agent Memory stands on the shoulders of the open-source community:
 We are grateful to the authors and contributors of these projects.
 
 ---
-## Community & Contributing
+## About this fork
 
-We welcome contributions of all kinds — bug reports, feature suggestions, documentation fixes, benchmark reproductions, ecosystem integrations, or pull requests. Agent memory is far from settled, and we hope to build it together with the community.
+This is a personal fork of [TencentDB Agent Memory](https://github.com/Tencent/TencentDB-Agent-Memory), maintained for private development and synced with upstream. It does not accept issues, pull requests, or contributions.
 
-- 🐞 **Found a bug or have a question?** Open an issue in [GitHub Issues](https://github.com/fbutera1/fb-TencentDB-Agent-Memory/issues) — we respond within 24 hours.
-- 💡 **Have an idea to share?** Start a thread in [GitHub Discussions](https://github.com/fbutera1/fb-TencentDB-Agent-Memory/discussions).
-- 🛠️ **Want to contribute code?** Please read [CONTRIBUTING.md](./CONTRIBUTING.md) first.
-- 💬 **Want to chat with us?** Join our [Discord community](https://discord.gg/dJQM6mKMF) and talk to the core developers directly.
+For the community project — bug reports, feature requests, discussions, and contributions — please visit the [upstream repository](https://github.com/Tencent/TencentDB-Agent-Memory).
 
 ---
 
@@ -295,35 +291,5 @@ We welcome contributions of all kinds — bug reports, feature suggestions, docu
 </p>
 
 ---
-
-## ✨ Contributors
-
-> 💡 Thanks to the following contributors building with us — you make TencentDB Agent Memory better.
-
-<div align="center">
-  <a href="https://github.com/fbutera1/fb-TencentDB-Agent-Memory/graphs/contributors">
-    <img src="https://contrib.rocks/image?repo=fbutera1/fb-TencentDB-Agent-Memory&columns=12&anon=1" />
-  </a>
-
-  <br /><br />
-<a href="https://github.com/fbutera1/fb-TencentDB-Agent-Memory/issues">
-  <img src="https://img.shields.io/badge/Contributions_Welcome-006eff?style=for-the-badge&logo=github&logoColor=white" alt="Contributions Welcome" />
-</a>
-
-</div>
-
-
-<table width="100%">
-  <tr>
-    <td width="68%">
-      <b>If TencentDB Agent Memory has been helpful to you, please consider starring the project.</b><br />
-      If you have any suggestions, feel free to open an issue for discussion.
-    </td>
-    <td width="32%" align="right">
-      <img src="./assets/images/star-helper.png" alt="Star TencentDB Agent Memory" width="260" />
-    </td>
-  </tr>
-</table>
-
 
 [MIT](./LICENSE) © TencentDB Agent Memory Team

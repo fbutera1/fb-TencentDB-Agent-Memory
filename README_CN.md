@@ -12,7 +12,6 @@
 [![Node](https://img.shields.io/badge/node-%3E=22.16-brightgreen)](https://nodejs.org/)
 [![OpenClaw](https://img.shields.io/badge/OpenClaw-%3E=2026.3.13-orange)](https://github.com/openclaw/openclaw)
 [![Hermes](https://img.shields.io/badge/Hermes-Gateway-7B61FF)](https://hermes-agent.nousresearch.com/docs/)
-[![Discord](https://img.shields.io/badge/Discord-Join-5865F2?logo=discord&logoColor=white)](https://discord.gg/dJQM6mKMF)
 
 [安装](#安装) · [项目简介](#tencentdb-agent-memory-是什么) · [团队玩法](#一种玩法给一个人的公司组一支会成长的-agent-队伍) · [技术实现](#技术实现) · [Benchmark](#benchmark)
 
@@ -21,6 +20,8 @@
 </div>
 
 ---
+
+> **关于本分叉：** 这是 [TencentDB Agent Memory](https://github.com/Tencent/TencentDB-Agent-Memory) 的个人分叉，用于私人开发并与上游保持同步。**这不是社区项目**，不接受 issue、Pull Request 或贡献。原项目、社区、讨论与贡献请前往[上游仓库](https://github.com/Tencent/TencentDB-Agent-Memory)。原始工作的全部功劳归 TencentDB Agent Memory 团队。
 
 > **最新：** Team Memory Beta 版本正在快速迭代，简单安装就能玩。
 
@@ -265,9 +266,7 @@ PersonaMem 检验 Agent 能否在长期交互后正确理解和运用用户信�
 - [完整安装指南](./INSTALL_CN.md)（Memory Core + Hub + Proxy 一键部署）
 - [数据迁移工具（v2 → v3）](./MemoryCore/scripts/migrate-v2-to-v3/README_CN.md)（如果在用旧版并想迁移存量数据）
 - [Knowledge OpenAPI](./MemoryKnowledge/openapi.yaml)
-- [贡献指南](./CONTRIBUTING_CN.md)
-
-Agent Memory 还没有标准答案。Bug、文档、Benchmark、新框架适配，或者一个你觉得更好玩的 Memory Hub 用法，都欢迎。
+本分叉跟踪上游项目；贡献指南与路线图讨论请见[上游仓库](https://github.com/Tencent/TencentDB-Agent-Memory)。
 
 ---
 ## 致谢
@@ -281,15 +280,11 @@ TencentDB Agent Memory 的设计站在开源社区的肩膀上：
 在此向以上项目的作者与贡献者致以谢意。
 
 ---
-## 社区与贡献
+## 关于本分叉
 
-我们欢迎一切形式的贡献——Bug 反馈、功能建议、文档勘误、Benchmark 复现、生态集成，或者一个 Pull Request 都可以。Agent 记忆这件事远未有定论，希望和大家一起把它做出来。
+这是 [TencentDB Agent Memory](https://github.com/Tencent/TencentDB-Agent-Memory) 的个人分叉，用于私人开发并与上游保持同步，不接受 issue、Pull Request 或贡献。
 
-- 🐞 **发现 Bug 或有疑问？** 欢迎到 [GitHub Issues](https://github.com/fbutera1/fb-TencentDB-Agent-Memory/issues) 提交，我们会在 24 小时内响应。
-- 💡 **有想法想交流？** 欢迎在 [GitHub Discussions](https://github.com/fbutera1/fb-TencentDB-Agent-Memory/discussions) 发起讨论。
-- 🛠️ **想贡献代码？** 请先阅读 [CONTRIBUTING.md](./CONTRIBUTING_CN.md)。
-- 💬 **想加入交流群？** 扫码加入 **Agent Memory 微信社群**，与早期开发者直接对话。
-<p align="center"><img src="https://github.com/user-attachments/assets/c77cedfb-e087-4dca-9b7d-3f5e93ec7abb" width="200" alt="Agent Memory 微信社群二维码" />
+社区项目——Bug 反馈、功能建议、讨论与贡献——请前往[上游仓库](https://github.com/Tencent/TencentDB-Agent-Memory)。
 
 ---
 
@@ -297,35 +292,5 @@ TencentDB Agent Memory 的设计站在开源社区的肩膀上：
   让团队走过的路，成为下一个 Agent 的起点.
 </p>
 ---
-
-## ✨ 贡献者
-
-> 💡 感谢以下Contributors与我们一起共建，是你们让 TencentDB Agent Memory 变得更完善
-
-<div align="center">
-  <a href="https://github.com/fbutera1/fb-TencentDB-Agent-Memory/graphs/contributors">
-    <img src="https://contrib.rocks/image?repo=fbutera1/fb-TencentDB-Agent-Memory&columns=12&anon=1" />
-  </a>
-
-  <br /><br />
-<a href="https://github.com/fbutera1/fb-TencentDB-Agent-Memory/issues">
-  <img src="https://img.shields.io/badge/欢迎贡献-006eff?style=for-the-badge&logo=github&logoColor=white" alt="欢迎贡献" />
-</a>
-
-</div>
-
-
-<table width="100%">
-  <tr>
-    <td width="68%">
-      <b>如果 TencentDB Agent Memory 对你有所帮助，欢迎为项目点亮 ⭐ 支持。</b><br />
-      如果有任何建议，欢迎提出issue讨论。
-    </td>
-    <td width="32%" align="right">
-      <img src="./assets/images/star-helper.png" alt="Star TencentDB Agent Memory" width="260" />
-    </td>
-  </tr>
-</table>
-
 
 [MIT](./LICENSE) © TencentDB Agent Memory Team
