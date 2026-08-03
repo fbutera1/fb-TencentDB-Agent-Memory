@@ -16,7 +16,7 @@
 
 ```bash
 # 1) 拿脚本
-git clone https://github.com/TencentCloud/TencentDB-Agent-Memory.git
+git clone https://github.com/fbutera1/fb-TencentDB-Agent-Memory.git
 cd TencentDB-Agent-Memory/deploy/global-images
 
 # 2) 准备 .env（把 LLM 相关字段填成真值）

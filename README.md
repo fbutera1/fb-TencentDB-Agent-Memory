@@ -33,7 +33,7 @@
 Start all three services in one go (`memory-core` + `memory-hub` + `proxy`):
 
 ```bash
-git clone https://github.com/Tencent/TencentDB-Agent-Memory.git
+git clone https://github.com/fbutera1/fb-TencentDB-Agent-Memory.git
 cd TencentDB-Agent-Memory/deploy/global-images
 cp .env.example .env
 $EDITOR .env       # Fill in two sets of LLM parameters (memory group + proxy group)
@@ -283,8 +283,8 @@ We are grateful to the authors and contributors of these projects.
 
 We welcome contributions of all kinds — bug reports, feature suggestions, documentation fixes, benchmark reproductions, ecosystem integrations, or pull requests. Agent memory is far from settled, and we hope to build it together with the community.
 
-- 🐞 **Found a bug or have a question?** Open an issue in [GitHub Issues](https://github.com/Tencent/TencentDB-Agent-Memory/issues) — we respond within 24 hours.
-- 💡 **Have an idea to share?** Start a thread in [GitHub Discussions](https://github.com/Tencent/TencentDB-Agent-Memory/discussions).
+- 🐞 **Found a bug or have a question?** Open an issue in [GitHub Issues](https://github.com/fbutera1/fb-TencentDB-Agent-Memory/issues) — we respond within 24 hours.
+- 💡 **Have an idea to share?** Start a thread in [GitHub Discussions](https://github.com/fbutera1/fb-TencentDB-Agent-Memory/discussions).
 - 🛠️ **Want to contribute code?** Please read [CONTRIBUTING.md](./CONTRIBUTING.md) first.
 - 💬 **Want to chat with us?** Join our [Discord community](https://discord.gg/dJQM6mKMF) and talk to the core developers directly.
 
@@ -301,12 +301,12 @@ We welcome contributions of all kinds — bug reports, feature suggestions, docu
 > 💡 Thanks to the following contributors building with us — you make TencentDB Agent Memory better.
 
 <div align="center">
-  <a href="https://github.com/TencentCloud/TencentDB-Agent-Memory/graphs/contributors">
-    <img src="https://contrib.rocks/image?repo=TencentCloud/TencentDB-Agent-Memory&columns=12&anon=1" />
+  <a href="https://github.com/fbutera1/fb-TencentDB-Agent-Memory/graphs/contributors">
+    <img src="https://contrib.rocks/image?repo=fbutera1/fb-TencentDB-Agent-Memory&columns=12&anon=1" />
   </a>
 
   <br /><br />
-<a href="https://github.com/TencentCloud/TencentDB-Agent-Memory/issues">
+<a href="https://github.com/fbutera1/fb-TencentDB-Agent-Memory/issues">
   <img src="https://img.shields.io/badge/Contributions_Welcome-006eff?style=for-the-badge&logo=github&logoColor=white" alt="Contributions Welcome" />
 </a>
 

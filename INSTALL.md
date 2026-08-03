@@ -19,7 +19,7 @@ consume team memory / knowledge / skills through the proxy:
 
 ```bash
 # 1) Fetch the scripts
-git clone https://github.com/TencentCloud/TencentDB-Agent-Memory.git
+git clone https://github.com/fbutera1/fb-TencentDB-Agent-Memory.git
 cd TencentDB-Agent-Memory/deploy/global-images
 
 # 2) Prepare .env (fill in real LLM values)

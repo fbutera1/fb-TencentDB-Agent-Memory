@@ -34,7 +34,7 @@
 一次拉起完整三件套（`memory-core` + `memory-hub` + `proxy`）：
 
 ```bash
-git clone https://github.com/Tencent/TencentDB-Agent-Memory.git
+git clone https://github.com/fbutera1/fb-TencentDB-Agent-Memory.git
 cd TencentDB-Agent-Memory/deploy/global-images
 cp .env.example .env
 $EDITOR .env       # 填入两组 LLM 参数（memory 组 + proxy 组）
@@ -285,8 +285,8 @@ TencentDB Agent Memory 的设计站在开源社区的肩膀上：
 
 我们欢迎一切形式的贡献——Bug 反馈、功能建议、文档勘误、Benchmark 复现、生态集成，或者一个 Pull Request 都可以。Agent 记忆这件事远未有定论，希望和大家一起把它做出来。
 
-- 🐞 **发现 Bug 或有疑问？** 欢迎到 [GitHub Issues](https://github.com/Tencent/TencentDB-Agent-Memory/issues) 提交，我们会在 24 小时内响应。
-- 💡 **有想法想交流？** 欢迎在 [GitHub Discussions](https://github.com/Tencent/TencentDB-Agent-Memory/discussions) 发起讨论。
+- 🐞 **发现 Bug 或有疑问？** 欢迎到 [GitHub Issues](https://github.com/fbutera1/fb-TencentDB-Agent-Memory/issues) 提交，我们会在 24 小时内响应。
+- 💡 **有想法想交流？** 欢迎在 [GitHub Discussions](https://github.com/fbutera1/fb-TencentDB-Agent-Memory/discussions) 发起讨论。
 - 🛠️ **想贡献代码？** 请先阅读 [CONTRIBUTING.md](./CONTRIBUTING_CN.md)。
 - 💬 **想加入交流群？** 扫码加入 **Agent Memory 微信社群**，与早期开发者直接对话。
 <p align="center"><img src="https://github.com/user-attachments/assets/c77cedfb-e087-4dca-9b7d-3f5e93ec7abb" width="200" alt="Agent Memory 微信社群二维码" />
@@ -303,12 +303,12 @@ TencentDB Agent Memory 的设计站在开源社区的肩膀上：
 > 💡 感谢以下Contributors与我们一起共建，是你们让 TencentDB Agent Memory 变得更完善
 
 <div align="center">
-  <a href="https://github.com/TencentCloud/TencentDB-Agent-Memory/graphs/contributors">
-    <img src="https://contrib.rocks/image?repo=TencentCloud/TencentDB-Agent-Memory&columns=12&anon=1" />
+  <a href="https://github.com/fbutera1/fb-TencentDB-Agent-Memory/graphs/contributors">
+    <img src="https://contrib.rocks/image?repo=fbutera1/fb-TencentDB-Agent-Memory&columns=12&anon=1" />
   </a>
 
   <br /><br />
-<a href="https://github.com/TencentCloud/TencentDB-Agent-Memory/issues">
+<a href="https://github.com/fbutera1/fb-TencentDB-Agent-Memory/issues">
   <img src="https://img.shields.io/badge/欢迎贡献-006eff?style=for-the-badge&logo=github&logoColor=white" alt="欢迎贡献" />
 </a>
 

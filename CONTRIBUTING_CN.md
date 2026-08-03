@@ -46,7 +46,7 @@ tdai-memory-openclaw-plugin/
 最简单的开发闭环是先用 Docker 起一套完整三件套，再本地开发目标模块：
 
 ```bash
-git clone https://github.com/Tencent/TencentDB-Agent-Memory.git
+git clone https://github.com/fbutera1/fb-TencentDB-Agent-Memory.git
 cd TencentDB-Agent-Memory/deploy/global-images
 cp .env.example .env && $EDITOR .env
 ./start-all.sh

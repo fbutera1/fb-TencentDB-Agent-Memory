@@ -60,7 +60,7 @@
 无需登录：
 
 ```bash
-git clone https://github.com/Tencent/TencentDB-Agent-Memory.git
+git clone https://github.com/fbutera1/fb-TencentDB-Agent-Memory.git
 cd TencentDB-Agent-Memory/deploy/global-images
 cp .env.example .env && $EDITOR .env    # 填入两组 LLM 参数
 ./start-all.sh                          # 一键起
@@ -154,7 +154,7 @@ Docker 镜像 tag 独立于 npm 版本，本次镜像发的是 `:1.0.0-beta.1`�
 无需登录：
 
 ```bash
-git clone https://github.com/Tencent/TencentDB-Agent-Memory.git
+git clone https://github.com/fbutera1/fb-TencentDB-Agent-Memory.git
 cd TencentDB-Agent-Memory/deploy/global-images
 cp .env.example .env && $EDITOR .env    # 填入两组 LLM 参数
 ./start-all.sh                          # 一键起
